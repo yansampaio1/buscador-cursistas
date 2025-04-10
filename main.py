@@ -16,11 +16,15 @@ app.add_middleware(
 )
 
 # Carrega credenciais
-SERVICE_ACCOUNT_FILE = "credenciais.json"  # substitua pelo nome do seu arquivo
+import json
+
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly']
 
-credentials = service_account.Credentials.from_service_account_file(
-    SERVICE_ACCOUNT_FILE, scopes=SCOPES
+# Lê a chave do ambiente e converte para dict
+service_account_info = json.loads(os.environ["GOOGLE_CREDENTIALS_JSON"])
+credentials = service_account.Credentials.from_service_account_info(
+    service_account_info, scopes=SCOPES
+    
 )
 
 # Dados da planilha
