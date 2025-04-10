@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "buscador-info-cursistas",
+  "private_key_id": "cbc5160d2617ad72e13217cc6a50bbfcc8969af9",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCF9G9c/ok5VyLt\nvqi+h90z46d657P9O7YVRSAhu2eynLg/u1oC7JM6bq3SDQ41AREGZmYrO7cyozKf\nhwFdf5Zz/d15ZOZKyrn6Oxxg+NAp0eIu2hezU5tCZgrm9bqkgmkBOB2lws0ljLTW\nZ/A9uIzI6cWVQT3a9evBNmXHa5qxK4Ukp4NCH0G6LMm8nFpn/AgzjkmtRXZ79gql\n0MMABSXTMUl4TL/acVmk3P5rVbpZA+tjkLxH4vtFA0ib4CMDc+8ST2VOnSwYXsLY\nvhtdBRP3s5v1IQS07L7H+uau74TiXEFQKEpjtvhiDQZb49rLwrs3a+/f0EX3q38d\nUqxuPJurAgMBAAECggEAEE5AThAX0RiHwmvea47rQLk59k6FDNK7Z9xpvGFtDoNg\nNDXQj6GPjGHTm8mGDLKsCVzmm+Whd7MA4wVSh7iTrlvdHT1IgRsrR0fxvOYcpLKN\nN0nJ78TCFfOI6TNJPGQ5dvIHPdm4EhWOH7k4N7MixAQczn3KE0CzKWo/OmahRmaK\nMCgbu00jek9jrPTyVLw2NBNaIqNcMYD4Dp3qhD6aejmHndjJKfb6gMiLDM+XuVrC\nuxd+QHaq97csUzQ7c+E6w390bLPfqB5vrT03kGbWgGXX8tW4Rkr1Ub8PqjuIrN13\nPq15az7TpUoHftmo/ZdAaR6/4lFVM6omsaMIiiPMwQKBgQC8LxAn1bHjhXE4/jex\nqKN0PWE2nHfR5VxLBXdt316zEgmcQrjAZ4gHBdWjoAh9j2vpBVWrDAiZbvnlsyu0\n+XRe8sOPFmVLRB1jwQBQ0Dh9UcNkTpONLr7g1IlovEIMj118shNUIAMN2mbtbjVp\nPAs7E3y9e5mqNkcM7lEqwEDr6wKBgQC2OnalCp7LSEvDb2pIIkdlRvIJpcAXFzaO\nPJjmJ39jJesMEnFCgmwn3lt8D3TysVmfgLRbghGxIoTuuu0cvBwBopyjdryPVg61\nHv9HFqVglahS+D+9pBRujyIOLylPK/PvHc9jH6Q6PQRu/5UxlNftffVbqEksCIZv\nJFACe/3fQQKBgFOGzDPyLPghBcVXSR8pDAwPJnQX9TMMC/AcqArzp1PyQKPEFb8I\n9R6w30e2Q65/l1UhkgnO2I5J7M+gvFiilJ2EQXrkZOeIf0cEpoA4O6qcPQ7rtaBn\nzD989tSvIt3yUHuFiwC/CLwAYcknLrvb89wv5SExmF4to1HBAfPoy6grAoGAVWM9\ntwYr9EszHSe24IgXdlBxF64wPWGmMa4ZYzc8zMO2yNhXc/fTIDdkHNTNUu9hdIkF\neh+PlLX9HjQ+6QkIAogk57+6iVuk1p/otHHbGk/mKMKkc4NQA6JULdtRewS4b+JD\nDEqGVLfEvRJL4YjCSUmNT96iMtznyWp1h0R8aEECgYEAiIxfWlQRRGJo2qYfZ4Wm\nC/wyqg04KqEXV0xsgSGftYtl0RVNsV3HAP7HoPdeJwgkQEw6krNXLMpP/ntHtbc1\nnOTeyI6e3W1+YMcxmHYUQP+iMSNidJCgOW3xm5EEsq9pXuKrqKzEqgdwmYLEEu2Y\n+dJJDnYwXc1wUG63wfZrl00=\n-----END PRIVATE KEY-----\n",
+  "client_email": "servico-info-buscador@buscador-info-cursistas.iam.gserviceaccount.com",
+  "client_id": "115257980965006000637",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/servico-info-buscador%40buscador-info-cursistas.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
