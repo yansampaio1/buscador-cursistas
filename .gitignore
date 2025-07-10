@@ -1,0 +1,12 @@
+# Ignora a pasta do ambiente virtual
+venv/
+
+# Ignora arquivos Python compilados
+__pycache__/
+*.py[cod]
+
+# Ignora arquivos de ambiente local
+.env
+
+# Ignora arquivos de credenciais sensíveis
+credenciais.json
