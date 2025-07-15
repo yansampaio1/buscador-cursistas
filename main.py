@@ -7,10 +7,10 @@ import json
 
 app = FastAPI()
 
-# Libera o CORS para qualquer origem (ajuste se necessário)
+# Libera CORS para qualquer origem
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # ou substitua por ["https://seudominio.com"]
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -19,36 +19,48 @@ app.add_middleware(
 # Escopo para leitura da planilha
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly']
 
-# Lê as credenciais do ambiente
+# Lê as credenciais do ambiente apenas uma vez
 service_account_info = json.loads(os.environ["GOOGLE_CREDENTIALS_JSON"])
 credentials = service_account.Credentials.from_service_account_info(
     service_account_info, scopes=SCOPES
 )
 
-# Informações da planilha
+# ID da planilha e intervalo
 SHEET_ID = "1Y435No_51cn5_3gFiDxB0ESu5G1DGgM17yZGi7xBpq8"
 RANGE_NAME = "Página1"
 
-@app.get("/cursistas")
-def get_cursistas():
+# Cache de dados
+dados_cache = []
+data_cache = "Carregando..."
+
+def carregar_dados():
+    global dados_cache, data_cache
+
     service = build('sheets', 'v4', credentials=credentials)
     sheet = service.spreadsheets()
 
-    # Lê todos os dados da planilha (tabela de cursistas)
+    # Lê a planilha completa
     result = sheet.values().get(spreadsheetId=SHEET_ID, range=RANGE_NAME).execute()
     values = result.get('values', [])
 
-    # Lê o valor da célula AB1
+    # Lê a célula AB1 (data de atualização)
     ab1_result = sheet.values().get(spreadsheetId=SHEET_ID, range="AB1").execute()
     data_atualizacao = ab1_result.get("values", [[None]])[0][0]
 
-    if not values:
-        return {"data": [], "dataAtualizacao": data_atualizacao or "Data não disponível"}
+    if values:
+        headers = values[0]
+        dados_cache = [dict(zip(headers, row)) for row in values[1:]]
+        data_cache = data_atualizacao or "Data não disponível"
+    else:
+        dados_cache = []
+        data_cache = "Sem dados"
 
-    headers = values[0]
-    dados = [dict(zip(headers, row)) for row in values[1:]]
+# Carrega ao iniciar
+carregar_dados()
 
+@app.get("/cursistas")
+def get_cursistas():
     return {
-        "data": dados,
-        "dataAtualizacao": data_atualizacao or "Data não disponível"
+        "data": dados_cache,
+        "dataAtualizacao": data_cache
     }
